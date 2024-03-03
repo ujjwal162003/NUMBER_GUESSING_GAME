@@ -1,0 +1,43 @@
+#include <iostream>
+#include <ctime>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+
+    int userNumber;
+
+    // GENERATING RANDOM NUMBER
+    srand(time(nullptr));
+
+    int secretNumber;
+    secretNumber = rand() % 10 + 1;
+
+    // TAKING INPUT FROM USER
+
+    cout << "HELLO WELCOME TO UJJWALS MAGIC NUMBER GAME! " << endl;
+    cout << "I HAVE A NUMBER IN MIND , LETS SEE IF YOU CAN GUESS IT DONT WORRY IF YOU DONT GET IT IN THE FIRST TRY ILL HELP YOU UNTILL YOU GET IT RIGHT" << endl;
+
+    do
+    {
+        cout << "PLEASE ENTER A NUMBER FROM 1 TO 10" << endl;
+        cin >> userNumber;
+
+        if (userNumber == secretNumber)
+        {
+            cout << "Congratulations! You got it right. The number was indeed " << secretNumber << endl;
+        }
+        else if (userNumber < secretNumber)
+        {
+            cout << "The number you entered is smaller than the number I have in mind. Try again: ";
+        }
+        else if (userNumber > secretNumber)
+        {
+            cout << "The number you entered is greater than the number I have in mind. Try again: ";
+        }
+
+    } while (userNumber != secretNumber);
+
+    return 0;
+}
